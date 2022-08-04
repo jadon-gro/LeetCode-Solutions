@@ -1,3 +1,4 @@
+package src;
 // Time Complexity: O(n)
 
 import java.util.HashMap;
@@ -14,7 +15,9 @@ class Solution {
       map.put('M', 1000);
       int l = s.length();
         for (int i = 0; i < l; i++) {
-          if((l-i > 1 && map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) || (l-i > 2 && map.get(s.charAt(i)) == map.get(s.charAt(i + 1)) && map.get(s.charAt(i)) < map.get(s.charAt(i + 2)))) {
+          if((l-i > 1 && map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) || 
+          (l-i > 2 && map.get(s.charAt(i)) == map.get(s.charAt(i + 1)) 
+          && map.get(s.charAt(i)) < map.get(s.charAt(i + 2)))) {
             sum = sum - map.get(s.charAt(i));
           } else {
             sum = sum + map.get(s.charAt(i));

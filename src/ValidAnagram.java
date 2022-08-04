@@ -1,8 +1,9 @@
+package src;
 // Time Complexity: O(n)
 
 import java.util.*;
 class Solution {
-  public boolean isAnagram(String s, String t) {
+  public static boolean isAnagram(String s, String t) {
       HashMap<Character, Integer> sMap = new HashMap<Character, Integer>();
       HashMap<Character, Integer> tMap = new HashMap<Character, Integer>();
       int len = s.length();
@@ -16,5 +17,9 @@ class Solution {
       }
       if (sMap.equals(tMap)) return true;
       return false;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(isAnagram("hello", "olleh"));
   }
 }
