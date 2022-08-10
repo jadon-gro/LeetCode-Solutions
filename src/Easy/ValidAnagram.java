@@ -1,4 +1,4 @@
-package src;
+package src.Easy;
 // Time Complexity: O(n)
 
 import java.util.*;

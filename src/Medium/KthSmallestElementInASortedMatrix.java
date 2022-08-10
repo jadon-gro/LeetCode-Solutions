@@ -1,4 +1,4 @@
-package src;
+package src.Medium;
 
 import java.util.*;
 class Solution {

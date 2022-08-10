@@ -1,4 +1,4 @@
-package src;
+package src.Easy;
 // Time complexity O(1) operations amortized
 
 import java.util.*;
