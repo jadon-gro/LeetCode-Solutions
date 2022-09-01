@@ -45,7 +45,6 @@ class BackTracking {
 class BinaryMasking {
   public List<List<Integer>> subsets(int[] nums) {
       List<List<Integer>> response = new ArrayList<List<Integer>>();
-      List<String> masks = new ArrayList<String>();
       int ul = (int) Math.pow(2 ,nums.length);
       for (int i = 0; i < ul; i++) {
           String mask = Integer.toBinaryString(i);
