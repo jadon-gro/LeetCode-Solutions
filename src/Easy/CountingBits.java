@@ -1,4 +1,5 @@
 package src.Easy;
+// O(nlogn)
 class Solution {
     public int[] countBits(int n) {
         int[] ans = new int[n + 1];
@@ -12,5 +13,24 @@ class Solution {
             ans[i] = count;
         }
         return ans;
+    }
+}
+// O(n)
+class Solution2 {
+    public int[] countBits(int n) {
+        int[] response = new int[n + 1];
+        if (n == 0) return response;
+        response[1] = 1;
+        int start = 0;
+        int j = 0;
+        for(int i = 2; i < response.length; i++) {
+            if (start == j) {
+                start = i;
+                j = 0;
+            }
+            response[i] = response[j] + 1;
+            j++;
+        }
+        return response;
     }
 }
