@@ -15,3 +15,33 @@ class Solution {
       return true;
   }
 }
+
+
+//Second solution with one pass
+class Solution2 {
+    public boolean isPalindrome(String s) {
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            while (l < r && isSpecial(s.charAt(l))) l++;
+            while (l < r && isSpecial(s.charAt(r))) r--;
+            if (l > r) break;
+            if (isEqualIgnoreCase(s.charAt(l), s.charAt(r))) {
+                l++;
+                r--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    private boolean isSpecial(char c) {
+        return (c < 48 || c > 57 && c < 65 || c > 90 && c < 97 || c > 122);
+    }
+
+    private boolean isEqualIgnoreCase(char l, char r) {
+        return (l == r || r > 96 && l == r - 32 || l > 96 && r == l - 32);
+    }
+}
